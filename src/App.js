@@ -1,11 +1,15 @@
 import React from 'react';
+import LocatonContextProvider from './contexts/LocationContextProvider';
+import WeatherContextProvider from './contexts/WeatherContextProvider';
 import "./index.css"
 
 const App = () => {
   return (
-    <div>
-      
-    </div>
+    <LocatonContextProvider>
+      <WeatherContextProvider>
+        
+      </WeatherContextProvider>
+    </LocatonContextProvider>
   );
 };
 
