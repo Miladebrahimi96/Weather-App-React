@@ -1,7 +1,7 @@
 import React, {useState, useEffect, createContext} from 'react';
 
 //API
-import { getLocation } from '../api';
+import { getLocation } from '../services/api';
 
 export const LocationContext = createContext();
 
