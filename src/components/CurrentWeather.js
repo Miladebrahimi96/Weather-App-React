@@ -35,7 +35,7 @@ const CurrentWeather = () => {
                 <Icon />
             </div>
             <div>
-                {Object.keys(weatherData).length !== 0 && <h3 ref={degree} onClick={clickHandler}>{centigrade(weatherData.main.temp)}° C </h3>}
+                {Object.keys(weatherData).length !== 0 && <h3 title='click to see in fahrenheit' ref={degree} onClick={clickHandler}>{centigrade(weatherData.main.temp)}° C </h3>}
                 {Object.keys(weatherData).length !== 0 && <h3>{weatherData.weather[0].description} </h3>}
                 
             </div>
