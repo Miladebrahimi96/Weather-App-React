@@ -17,7 +17,7 @@ const CurrentWeather = () => {
 
     const degree = useRef();
     
-    console.log(degree);
+    console.log(locationData);
 
     const clickHandler = () => {
         if(degree.current.innerText.slice(-1) === "C"){
@@ -31,7 +31,7 @@ const CurrentWeather = () => {
     return (
         <>
             <div>
-                <h2>{locationData.timezone}</h2>
+                <h2>{locationData.city} /{locationData.country}</h2>
                 <Icon />
             </div>
             <div>
