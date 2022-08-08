@@ -21,7 +21,9 @@ const WeatherContextProvider = ({children}) => {
         const fetchAPI = async () => {
             setWeather(await getWeather(lat,lon));
         }
-        fetchAPI();
+        if(lat && lon){
+            fetchAPI();
+        }
     }, [lat, lon])
 
     return (
