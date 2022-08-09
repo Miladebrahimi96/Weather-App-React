@@ -105,6 +105,9 @@
     }
 }
 @media (max-width: 768px) {
+    .container{
+        margin-top: 100px;
+    }
     .topContainer h2 {
         font-size: 2rem;
         margin-right: 50px;
