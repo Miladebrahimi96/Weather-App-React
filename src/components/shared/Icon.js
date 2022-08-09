@@ -21,19 +21,20 @@ import { WeatherContext } from '../../contexts/WeatherContextProvider';
 
 const Icon = () => {
     const weatherData = useContext(WeatherContext);
+    const condition = weatherData.weather[0].main;
     
     const dayOrNight = getDayOrNight();
 
     return (
         <div className={styles.container}>
-            {Object.keys(weatherData).length !== 0 && weatherData.weather[0].main=== "Clouds" && <img src={clouds}alt='condition'/>}
-            {Object.keys(weatherData).length !== 0 && weatherData.weather[0].main=== "Rain" && <img src={Rain}alt='condition'/>}
-            {Object.keys(weatherData).length !== 0 && weatherData.weather[0].main=== "Snow" && <img src={Snow}alt='condition'/>}
-            {Object.keys(weatherData).length !== 0 && weatherData.weather[0].main=== "Mist" && <img src={Mist}alt='condition'/>}
-            {Object.keys(weatherData).length !== 0 && weatherData.weather[0].main=== "Drizzle" && <img src={Drizzle}alt='condition'/>}
-            {Object.keys(weatherData).length !== 0 && weatherData.weather[0].main=== "Thunderstorm" && <img src={Thunderstorm}alt='condition'/>}
-            {Object.keys(weatherData).length !== 0 && weatherData.weather[0].main=== "Clear-Day" && dayOrNight === "Day" && <img src={clearDay}alt='condition'/>  }
-            {Object.keys(weatherData).length !== 0 && weatherData.weather[0].main=== "Clear-Night" && dayOrNight === "Night" && <img src={clearNight}alt='condition'/>  }
+            {condition === "Clouds" && <img src={clouds}alt='condition'/>}
+            {condition === "Rain" && <img src={Rain}alt='condition'/>}
+            {condition === "Snow" && <img src={Snow}alt='condition'/>}
+            {condition === "Mist" && <img src={Mist}alt='condition'/>}
+            {condition === "Drizzle" && <img src={Drizzle}alt='condition'/>}
+            {condition === "Thunderstorm" && <img src={Thunderstorm}alt='condition'/>}
+            {condition === "Clear-Day" && dayOrNight === "Day" && <img src={clearDay}alt='condition'/>  }
+            {condition === "Clear-Night" && dayOrNight === "Night" && <img src={clearNight}alt='condition'/>  }
         </div>
 
         

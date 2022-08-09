@@ -27,9 +27,12 @@ const WeatherContextProvider = ({children}) => {
     }, [lat, lon])
 
     return (
+        <>
+        {Object.keys(weather).length !== 0 && 
         <WeatherContext.Provider value={weather}>
             {children}
-        </WeatherContext.Provider>
+        </WeatherContext.Provider>}
+        </>
     );
 };
 

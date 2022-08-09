@@ -16,5 +16,12 @@ const getWeather = async (lat, lon) => {
     return response.data;
 }
 
+const getForcast = async (lat, lon) => {
+    const FORCAST_URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=f68a220fe5aebfe490d5ec94874ee5db`;
 
-export {getLocation, getWeather};
+    const response = await axios.get(FORCAST_URL);
+    return response.data;
+}
+
+
+export {getLocation, getWeather, getForcast};
