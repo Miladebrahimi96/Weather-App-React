@@ -21,9 +21,10 @@ import { WeatherContext } from '../../contexts/WeatherContextProvider';
 
 const Icon = () => {
     const weatherData = useContext(WeatherContext);
+    console.log(weatherData);
     const condition = weatherData.weather[0].main;
-    
-    const dayOrNight = getDayOrNight(new Date().getHours());
+    const hour = new Date().getHours();
+    const dayOrNight = getDayOrNight(hour);
 
     return (
         <div className={styles.container}>
@@ -33,8 +34,8 @@ const Icon = () => {
             {condition === "Mist" && <img src={Mist}alt='condition'/>}
             {condition === "Drizzle" && <img src={Drizzle}alt='condition'/>}
             {condition === "Thunderstorm" && <img src={Thunderstorm}alt='condition'/>}
-            {condition === "Clear-Day" && dayOrNight === "Day" && <img src={clearDay}alt='condition'/>  }
-            {condition === "Clear-Night" && dayOrNight === "Night" && <img src={clearNight}alt='condition'/>  }
+            {condition === "Clear" && dayOrNight === "Day" && <img src={clearDay}alt='condition'/>  }
+            {condition === "Clear" && dayOrNight === "Night" && <img src={clearNight}alt='condition'/>  }
         </div>
 
         
