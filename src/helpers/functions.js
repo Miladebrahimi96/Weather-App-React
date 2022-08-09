@@ -18,21 +18,3 @@ export const fahrenheit = degree => {
     const newDegree = (degree * 1.8)  +32;
     return newDegree.toFixed(2);
 }
-
-const getHour = time => {
-    const date = new Date(time);
-    const hour = date.getHours();
-    return hour;
-}
-const getMinute = time => {
-    const date = new Date(time);
-    const minute = date.getMinutes();
-    return minute;
-}
-const getSecond = time => {
-    const date = new Date(time);
-    const second = date.getSeconds();
-    return second;
-}
-
-export { getHour, getMinute, getSecond}
