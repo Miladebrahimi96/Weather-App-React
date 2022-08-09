@@ -15,6 +15,7 @@
 }
 
 .topContainer h2 {
+    text-align: center;
     margin-right: 200px;
     font-size: 3rem;
     color: #f1faee;
@@ -119,5 +120,6 @@
     }
     .topContainer h2{
         margin: 0;
+        font-size: 1.5rem;
     }
 }
