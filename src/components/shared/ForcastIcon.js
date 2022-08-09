@@ -1,5 +1,7 @@
-import React, {useContext} from 'react';
+import React from 'react';
 
+//styles
+import styles from "./ForcastIcon.module.css";
 
 //icons
 import clearDay from "../../assets/icons/Clear-Day.svg";
@@ -16,22 +18,24 @@ import { getDayOrNight } from '../../helpers/functions';
 
 //contexts
 
-const Icon = ({data}) => {
+const Icon = ({data, time}) => {
 
     const condition = data.weather[0].main;
 
-    const dayOrNight = getDayOrNight();
+    const hour = time.slice(0,2);
+    
+    const dayOrNight = getDayOrNight(hour);
 
     return (
-        <div>
+        <div className={styles.container}>
             {condition === "Clouds" && <img src={clouds}alt='condition'/>}
             {condition === "Rain" && <img src={Rain}alt='condition'/>}
             {condition === "Snow" && <img src={Snow}alt='condition'/>}
             {condition === "Mist" && <img src={Mist}alt='condition'/>}
             {condition === "Drizzle" && <img src={Drizzle}alt='condition'/>}
             {condition === "Thunderstorm" && <img src={Thunderstorm}alt='condition'/>}
-            {condition === "Clear-Day" && dayOrNight === "Day" && <img src={clearDay}alt='condition'/>  }
-            {condition === "Clear-Night" && dayOrNight === "Night" && <img src={clearNight}alt='condition'/>  }
+            {condition === "Clear" && dayOrNight === "Day" && <img src={clearDay}alt='condition'/>  }
+            {condition === "Clear" && dayOrNight === "Night" && <img src={clearNight}alt='condition'/>  }
         </div>
 
         

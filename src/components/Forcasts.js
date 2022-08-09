@@ -6,14 +6,15 @@ import Forcast from './shared/Forcast';
 //Contexts
 import { ForcastContext } from '../contexts/ForcastContextProvider';
 
+//styles 
+import styles from "./Forcasts.module.css";
 
 const Forcasts = () => {
 
     const forcast = useContext(ForcastContext);
-    console.log(forcast);
     
     return (
-        <div>
+        <div className={styles.container}>
             {
                 forcast.list.map(item => <Forcast key={item.dt} data={item} /> )
             }

@@ -23,7 +23,7 @@ const Icon = () => {
     const weatherData = useContext(WeatherContext);
     const condition = weatherData.weather[0].main;
     
-    const dayOrNight = getDayOrNight();
+    const dayOrNight = getDayOrNight(new Date().getHours());
 
     return (
         <div className={styles.container}>

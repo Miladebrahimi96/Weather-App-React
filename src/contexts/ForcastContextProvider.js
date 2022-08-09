@@ -6,7 +6,7 @@ import { getForcast } from '../services/api';
 //Context
 import { LocationContext } from './LocationContextProvider';
 
-const ForcastContext = createContext();
+export const ForcastContext = createContext();
 
 const ForcastContextProvider = ({children}) => {
 

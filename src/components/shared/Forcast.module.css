@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 10px;
+    margin: 30px;
+    padding: 20px;
+    width: 400px;
+    background-color: #219ebc;
+}
+.container:hover {
+    box-shadow: 0 5px 10px 20px rgba(249, 249, 249, .08);
+}
+.container p {
+    color: #fff;
+    font-weight: 500;
+}
+
+@media (max-width: 520px) {
+    .container {
+        width: 300px;
+    }
+}
+

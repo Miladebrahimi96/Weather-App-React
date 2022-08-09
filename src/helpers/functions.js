@@ -1,7 +1,7 @@
-export const getDayOrNight = () => {
+export const getDayOrNight = (date) => {
     let dayOrNight = "";
-    const date = new Date();
-    if(date.getHours() >= 6 && date.getHours() < 20){
+    // const date = new Date();
+    if(date >= 6 && date < 20){
         dayOrNight = "Day"
     }else {
         dayOrNight = "Night"
