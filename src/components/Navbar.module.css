@@ -1,0 +1,27 @@
+.mainContainer{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #219ebc;
+    box-shadow: rgba(250, 250, 250, .4) 0px 5px 24;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    
+}
+
+.container a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: all .2s ease;
+}
+
+.container a:hover {
+    color: #ccc;
+}

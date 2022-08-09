@@ -17,6 +17,10 @@
     font-weight: 500;
 }
 
+.container span {
+    color: #e9c46a;
+}
+
 @media (max-width: 520px) {
     .container {
         width: 300px;

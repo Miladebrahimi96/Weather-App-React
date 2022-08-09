@@ -14,10 +14,12 @@ const Forcasts = () => {
     const forcast = useContext(ForcastContext);
     
     return (
-        <div className={styles.container}>
-            {
-                forcast.list.map(item => <Forcast key={item.dt} data={item} /> )
-            }
+        <div className={styles.mainContainer}>
+            <div className={styles.container}>
+                {
+                    forcast.list.map(item => <Forcast key={item.dt} data={item} /> )
+                }
+            </div>
         </div>
     );
 };
