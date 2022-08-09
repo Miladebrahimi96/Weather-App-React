@@ -1,8 +1,9 @@
 import axios from "axios";
 
 const getLocation = async () => {
-
-    const LOCATION_URL = 'http://ip-api.com/json/?fields=country,city,lat,lon,timezone';
+    const ipResponse = axios.get('https://api.ipgeolocation.io/getip');
+    const ip = (await ipResponse).data.ip;
+    const LOCATION_URL = `https://api.ipgeolocation.io/ipgeo?apiKey=4068c780648d49b3b40f808e6963b049&ip=${ip}&output=xml`;
 
     const response = await axios.get(LOCATION_URL);
     return response.data;

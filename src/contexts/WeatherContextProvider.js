@@ -12,8 +12,8 @@ export const WeatherContext = createContext()
 const WeatherContextProvider = ({children}) => {
 
     const location = useContext(LocationContext);
-    const lat = location.lat;
-    const lon = location.lon;
+    const lat = location.latitude;
+    const lon = location.longitude;
 
     const [weather, setWeather] = useState({});
 

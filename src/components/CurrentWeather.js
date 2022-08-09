@@ -37,7 +37,7 @@ const CurrentWeather = () => {
     return (
         <div className={styles.container}>
             <div className={styles.topContainer}>
-                <h2>{locationData.city} ,{locationData.country}</h2>
+                <h2>{locationData.city} ,{locationData.country_name}</h2>
                 <Icon />
             </div>
             <div>

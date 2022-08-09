@@ -13,8 +13,8 @@ const ForcastContextProvider = ({children}) => {
     const [forcast, setForcast] = useState({})
 
     const location = useContext(LocationContext);
-    const lat = location.lat;
-    const lon = location.lon;
+    const lat = location.latitude;
+    const lon = location.longitude;
 
     useEffect(() => {
         const fetchAPI = async () => {
