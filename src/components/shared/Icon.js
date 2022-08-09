@@ -1,5 +1,8 @@
 import React, {useContext} from 'react';
 
+//styles
+import styles from './Icon.module.css';
+
 //icons
 import clearDay from "../../assets/icons/Clear-Day.svg";
 import clearNight from "../../assets/icons/Clear-Night.svg";
@@ -22,7 +25,7 @@ const Icon = () => {
     const dayOrNight = getDayOrNight();
 
     return (
-        <div>
+        <div className={styles.container}>
             {Object.keys(weatherData).length !== 0 && weatherData.weather[0].main=== "Clouds" && <img src={clouds}alt='condition'/>}
             {Object.keys(weatherData).length !== 0 && weatherData.weather[0].main=== "Rain" && <img src={Rain}alt='condition'/>}
             {Object.keys(weatherData).length !== 0 && weatherData.weather[0].main=== "Snow" && <img src={Snow}alt='condition'/>}

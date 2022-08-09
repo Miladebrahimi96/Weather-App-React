@@ -1,0 +1,119 @@
+.container {
+    background-color: #457b9d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding:0 50px;
+}
+
+.topContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topContainer h2 {
+    margin-right: 200px;
+    font-size: 3rem;
+    color: #f1faee;
+    letter-spacing: 2px;
+}
+
+.degree {
+    position: relative;
+    font-size: 2.5rem;
+    margin-bottom: 100px;
+    color: #e9c46a;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all .2s ease-in;
+}
+
+.title{
+    visibility: hidden;
+    position: relative;
+    font-size: 1rem;
+    color: #fff;
+    position:absolute;
+    width: 120px;
+    text-align: center;
+    margin-left: 5px;
+}
+
+.degree:hover{
+    background-color: rgba(249, 249, 249, .125);
+}
+
+.degree:hover .title {
+    visibility:unset;
+}
+
+.condition {
+    text-align: center;
+    color: #f1faee;
+    text-transform: capitalize;
+    margin-bottom: 100px;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+.container button {
+    text-align: center;
+    background: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    font-weight: 600;
+    color: #bde0fe;
+    cursor: pointer;
+    line-height: 10px;
+    transition: all .2s ease;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+}
+
+.container button:hover {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    perspective: 1000px;
+    color: #fff;
+}
+
+@keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+    
+    30%, 50%, 70% {
+      transform: translate3d(-2px, 0, 0);
+    }
+    40%, 60% {
+      transform: translate3d(2px, 0, 0);
+    }
+}
+
+@media (max-width: 950px) {
+    .topContainer h2 {
+        font-size: 2.5rem;
+        margin-right: 100px;
+    }
+}
+@media (max-width: 768px) {
+    .topContainer h2 {
+        font-size: 2rem;
+        margin-right: 50px;
+    }
+}
+@media (max-width: 660px) {
+    .topContainer{
+        flex-direction: column;
+    }
+    .topContainer h2{
+        margin: 0;
+    }
+}

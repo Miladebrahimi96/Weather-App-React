@@ -1,23 +1,29 @@
-import React, {useContext, useRef} from 'react';
+import React, {useContext, useRef, useState} from 'react';
 
+//Styles
+import styles from "./CurrentWeather.module.css"
+
+
+//Components
 import Icon from './shared/Icon';
+import WeatherDetails from './shared/WeatherDetails';
 
 //contexts
 import { LocationContext } from '../contexts/LocationContextProvider';
 import { WeatherContext } from '../contexts/WeatherContextProvider';
 
 //functions
-import { centigrade } from '../helpers/functions';
-import { fahrenheit } from '../helpers/functions';
+import { centigrade,fahrenheit } from '../helpers/functions';
+
 
 const CurrentWeather = () => {
     const locationData = useContext(LocationContext);
     const weatherData = useContext(WeatherContext);
-    console.log(weatherData);
 
     const degree = useRef();
-    
-    console.log(locationData);
+
+    const [isShown, setIsShown] = useState(false);
+
 
     const clickHandler = () => {
         if(degree.current.innerText.slice(-1) === "C"){
@@ -29,19 +35,18 @@ const CurrentWeather = () => {
     }
  
     return (
-        <>
-            <div>
-                <h2>{locationData.city} /{locationData.country}</h2>
+        <div className={styles.container}>
+            <div className={styles.topContainer}>
+                <h2>{locationData.city} ,{locationData.country}</h2>
                 <Icon />
             </div>
             <div>
-                {Object.keys(weatherData).length !== 0 && <h3 title='click to see in fahrenheit' ref={degree} onClick={clickHandler}>{centigrade(weatherData.main.temp)}° C </h3>}
-                {Object.keys(weatherData).length !== 0 && <h3>{weatherData.weather[0].description} </h3>}
-                
+                {Object.keys(weatherData).length !== 0 && <h3 className={styles.degree} ref={degree} onClick={clickHandler}>{centigrade(weatherData.main.temp)}° C <span className={styles.title}>Click o see in fahrenheit</span></h3>}
+                {Object.keys(weatherData).length !== 0 && <h3 className={styles.condition}>{weatherData.weather[0].description} </h3>}
             </div>
-            
-
-        </>
+            <button onClick={() => setIsShown(current => !current)}>More details</button>
+            {isShown === true && <WeatherDetails />}
+        </div>
     );
 };
 
