@@ -1,16 +1,18 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+
 import CurrentLanding from './components/CurrentLanding';
-// import CurrentWeather from './components/CurrentWeather';
-// import LocatonContextProvider from './contexts/LocationContextProvider';
-// import WeatherContextProvider from './contexts/WeatherContextProvider';
 // import ForcastContextProvider from './contexts/ForcastContextProvider';
 import "./index.css"
 
 const App = () => {
   return (
-    <>
-    <CurrentLanding />
-    </>
+    <div>
+    <Routes>
+      <Route path='/' element={<CurrentLanding />} />
+    </Routes>
+    
+    </div>
   );
 };
 
