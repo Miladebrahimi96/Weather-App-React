@@ -45,8 +45,8 @@ const CurrentWeather = () => {
                     className={styles.degree} 
                     ref={degree} 
                     onClick={clickHandler}>{centigrade(weatherData.main.temp)}° C 
-                    <span className={styles.title}>Click o see in fahrenheit</span>
                 </h3>
+                    <p className={styles.title}>Click on DEGREE see in fahrenheit</p>
                 <h3 className={styles.condition}>{weatherData.weather[0].description} </h3>
             </div>
             <button onClick={() => setIsShown(current => !current)}>More details</button>
